@@ -16,10 +16,10 @@ namespace Lab5
         {
             InitializeComponent();
         }
-        /* Name:
-         * Date: November 2024
+        /* Name: Alexis Rankin
+         * Date: December 2nd 2024
          * This program rolls one dice or calculates mark stats.
-         * Link to your repo in GitHub: 
+         * Link to your repo in GitHub: https://github.com/frostydog11/IntroProgrammingLab5
          * */
 
         //class-level random object
@@ -57,25 +57,40 @@ namespace Lab5
             
         }
 
-        /* Name: ClearOneRoll
-        *  Sent: nothing
-        *  Return: nothing
-        *  Clear the labels */
 
+        private void ClearOneRoll()
+        {
+            lblDice1.Text = string.Empty;
+            lblDice2.Text = string.Empty;
+            lblAverage.Text = string.Empty;
+            lblFail.Text = string.Empty;
+            lblPass.Text = string.Empty;
+            lblRollName.Text = string.Empty;
+        }
 
+        private void ClearStats()
+        {
+            
+        }
         /* Name: ClearStats
         *  Sent: nothing
         *  Return: nothing
         *  Reset nud to minimum value, chkbox unselected, 
         *  clear labels and listbox */
 
-
+        private int RollDice(int dice)
+        {
+            return rand.Next(dice);
+        }
         /* Name: RollDice
         * Sent: nothing
         * Return: integer (1-6)
         * Simulates rolling one dice */
 
+        private string GetName(ref int dice1, ref int dice2)
+        {
 
+        }
         /* Name: GetName
         * Sent: 1 integer (total of dice1 and dice2) 
         * Return: string (name associated with total) 
