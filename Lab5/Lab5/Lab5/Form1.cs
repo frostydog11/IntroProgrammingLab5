@@ -93,8 +93,8 @@ namespace Lab5
 
         private int RollDice()
         {
-            int dice = 0;
-            return rand.Next(dice);
+            int dice = rand.Next(1, 6);
+            return dice;
         }
         /* Name: RollDice
         * Sent: nothing
