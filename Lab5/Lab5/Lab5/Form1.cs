@@ -287,11 +287,6 @@ namespace Lab5
             }
         }
 
-        private void ChkSeed_MouseClick(object sender, MouseEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void radOneRoll_CheckedChanged(object sender, EventArgs e)
         {
             if (radOneRoll.Checked == true)
