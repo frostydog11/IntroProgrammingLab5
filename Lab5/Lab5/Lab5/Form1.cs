@@ -84,6 +84,7 @@ namespace Lab5
             lblFail.Text = string.Empty;
             lblPass.Text = string.Empty;
             lstMarks.Items.Clear();
+            chkSeed.Checked = false;
         }
         /* Name: ClearStats
         *  Sent: nothing
@@ -220,7 +221,7 @@ namespace Lab5
             //check if seed value
             if (chkSeed.Checked == true)
             {
-                Random rand = new Random(1000);
+                rand = new Random(1000);
             }
 
             //fill array using random number
@@ -261,7 +262,7 @@ namespace Lab5
                 sum = sum + i;
             }
 
-            average = sum / index;
+            average = sum / (double)index;
 
             return average;
 
@@ -276,11 +277,19 @@ namespace Lab5
 
         private void chkSeed_CheckedChanged(object sender, EventArgs e)
         {
-            DialogResult selection = MessageBox.Show("Are you sure you want to use a seed value?", "Confirm Seed Value", MessageBoxButtons.YesNo);
-            if (selection == DialogResult.No)
+            if (chkSeed.Checked)
             {
-                chkSeed.Checked = false;
+                DialogResult selection = MessageBox.Show("Are you sure you want to use a seed value?", "Confirm Seed Value", MessageBoxButtons.YesNo);
+                if (selection == DialogResult.No)
+                {
+                    chkSeed.Checked = false;
+                }
             }
+        }
+
+        private void ChkSeed_MouseClick(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void radOneRoll_CheckedChanged(object sender, EventArgs e)
