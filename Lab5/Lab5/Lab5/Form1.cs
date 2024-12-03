@@ -276,8 +276,11 @@ namespace Lab5
 
         private void chkSeed_CheckedChanged(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Are you sure you want to use a seed value?", "Confirm Seed Value");
+            DialogResult selection = MessageBox.Show("Are you sure you want to use a seed value?", "Confirm Seed Value", MessageBoxButtons.YesNo);
+            if (selection == DialogResult.No)
+            {
+                chkSeed.Checked = false;
+            }
         }
 
         private void radOneRoll_CheckedChanged(object sender, EventArgs e)
@@ -285,18 +288,16 @@ namespace Lab5
             if (radOneRoll.Checked == true)
             {
                 ClearStats();
-                grpOneRoll.Enabled = true;
-                grpMarkStats.Enabled = false;
+                grpMarkStats.Hide();
+                grpOneRoll.Show();
             }
 
-            else
+            else if (radOneRoll.Checked == false)
             {
                 ClearOneRoll();
-                grpOneRoll.Enabled = false;
-                grpMarkStats.Enabled = true;
+                grpMarkStats.Show();
+                grpOneRoll.Hide();
             }
-                
-
 
         }
     }
